@@ -1,0 +1,57 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Fitz me</title>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+    <link href="Scripts/shadowbox.css" /> 
+ 
+    <script type="text/javascript" src="Scripts/shadowbox.js"></script>
+    
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+    Shadowbox.init(); 
+    </script>
+    
+<asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="wrapper">
+
+        <form id="form1" runat="server">
+        
+            <div id="header">
+                <span class="title">Welcome to cuz its fits me data entry Portal</span>
+                <span class="breadcrumb">
+                 <a href="Scripts/myimage.jpg" rel="shadowbox;height=140;width=120">my image</a>
+                </span>
+            </div>
+        
+            <div id="content">
+             Hello <%=Session["UserName"]%>
+                <asp:contentplaceholder id="MainContent" runat="server">
+                
+                </asp:contentplaceholder>
+            </div>
+            
+            <div id="navigation">
+                <ul>
+
+                    <li><asp:HyperLink runat="server" ID="lnkCompany" NavigateUrl="~/AddCompany.aspx">Add Company</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server" ID="lnkSizes" NavigateUrl="~/CompanyDetails.aspx">Add Sizes</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server" ID="lnkView" NavigateUrl="~/View.aspx">View</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server" ID="lnklogout" NavigateUrl="~/Logout.aspx" >Logout</asp:HyperLink></li>
+        
+                            
+                      
+                </ul>
+                
+                
+            </div>
+        </form>
+     </div>
+</body>
+</html>
